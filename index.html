@@ -16,6 +16,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 -->
 <head>
   <meta charset="utf-8">
+
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
 
@@ -46,6 +53,81 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
+  <div id="main" class="container">
+    <header id="site-header" class="site-header centerise border-bottom">
+      <div id="logoline"></div>
+    </header>
+
+    <div class="container-fluid page">
+      <section id="about-me" class="row">
+        <aside class="col-md-3 aside-el">
+          <h2>About me</h2>
+          <h5>professional profile<br /> and contact info</h5>
+        </aside>
+        <article id="about-me-text" class="col-md-6 border-left par-el">
+        </article>
+        <div class="col-md-3 cont-info">
+          <ul id="social">
+          </ul>
+          <ul id="contacts">
+          </ul>
+        </div>
+      </section>
+
+      <section id="skills" class="row">
+        <aside class="col-md-3 aside-el">
+          <h2>My Skills</h2>
+          <h5>skills that I’m<br /> proud of</h5>
+        </aside>
+      </section>
+
+      <section id="experience" class="row" />
+        <aside class="col-md-3 aside-el">
+          <h2>Experience</h2>
+          <h5>where I worked</h5>
+        </aside>
+        <div id="experience-details" class="col-md-9"></div>
+      </section>
+
+      <section id="education" class="row">
+        <aside class="col-md-3 aside-el">
+          <h2>Education</h2>
+          <h5>Where I studied</h5>
+        </aside>
+        <div id="education-details" class="col-md-9">
+        </div>
+      </section>
+
+      <section id="online-courses" class="row">
+        <aside id="online-courses-header" class="col-md-3 aside-el">
+        </aside>
+        <div id="online-courses-details" class="col-md-9">
+        </div>
+      </section>
+
+      <section id="projects" class="row">
+        <aside class="col-md-3 aside-el">
+          <h2>Projects</h2>
+          <h5>some of my<br /> best work</h5>
+        </aside>
+        <div class="col-md-9 border-left">
+          <div id="projects-details">        
+        </div>
+      </section> 
+
+      <section id="map-section" class="row">
+        <aside class="col-md-3 aside-el">
+          <h2>Where I've Lived and Worked</h2>
+        </aside>
+        <div class="col-md-9 border-left">
+          <div id="mapDiv">
+          </div>
+        </div>
+    </section>
+
+    </div>
+  </div>
+
   <div id="main">
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -53,6 +135,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
+
+    <!--
     <div id="header" class="center-content">
       <ul id="topContacts" class='flex-box'></ul>
     </div>
@@ -69,14 +153,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="skillsChart">
       <h2>Skills Chart</h2>
     </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
+      <h2></h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
       <ul id="footerContacts" class="flex-box">
       </ul>
     </div>
+    -->
   </div>
 
   <!--
@@ -109,30 +193,27 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       an opening and closing set of slash asterisks for block comments.
   */
 
-
   if(document.getElementsByClassName("flex-item").length === 0) {
-    document.getElementById("topContacts").style.display = "none";
+    document.getElementById("social").style.display = "none";
+    document.getElementById("contacts").style.display = "none";
   }
   if(document.getElementsByTagName("h1").length === 0) {
-    document.getElementById("header").style.display = "none";
+    document.getElementById("site-header").style.display = "none";
   }
   if(document.getElementsByClassName("work-entry").length === 0) {
-    document.getElementById("workExperience").style.display = "none";
+    document.getElementById("experience").style.display = "none"; // ok
   }
   if(document.getElementsByClassName("project-entry").length === 0) {
-    document.getElementById("projects").style.display = "none";
+    document.getElementById("projects").style.display = "none"; // ok
   }
   if(document.getElementsByClassName("education-entry").length === 0) {
-    document.getElementById("education").style.display = "none";
+    document.getElementById("education").style.display = "none"; // ok
   }
   if(document.getElementsByClassName("skills-entry").length === 0) {
-    document.getElementById("skillsChart").style.display = "none";
-  }
-  if(document.getElementsByClassName("flex-item").length === 0) {
-    document.getElementById("letsConnect").style.display = "none";
+    document.getElementById("skills").style.display = "none"; // ok
   }
   if(document.getElementById("map") == undefined) {
-    document.getElementById("mapDiv").style.display = "none";
+    document.getElementById("mapDiv").style.display = "none"; // ok
   }
   </script>
 </body>

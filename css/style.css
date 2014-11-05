@@ -1,200 +1,328 @@
-*{
-    padding:0;
-    margin:0;
-    font-family: 'Roboto', sans-serif;
+/* Global */
+
+html {
+  font-size: 16px;
 }
 
-
-
-.education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+body {
+  font-size: 62.5%;
 }
 
-
-h1 {
-
-  font-size: 40px;
-  color: #F5A623;
-  line-height: 48px;
-  display: inline;
+.border-bottom {
+  border-bottom: 1px solid #d4d4d4;
 }
 
-h2 {
-  font-style: bold;
-  font-size: 24px;
-  color: #999999;
-  line-height: 29px;
-  padding: 10px;
+.border-left {
+  border-left: 1px solid #d4d4d4;
 }
 
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000000;
-  line-height: 22px;
+ul, 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-h4 {
-  font-style: bold;
-  font-size: 14px;
-  color: #4A4A4A;
-  line-height: 17px;
+.aside-el {
+  text-align: right;
+  padding-right: 5px;
 }
 
-h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
+.aside-el  h2 {
+  font: 2.9em 'Arvo', serif;
+  line-height: 0.8em;
+  color: #464646;
+  font-weight: normal;
+  margin-bottom: 3px;
+  margin-top: 0;
 }
 
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: left;
+.aside-el  h5 {
+  font: 1.35em 'Droid Sans', sans-serif;
+  line-height: 1.2em;
+  color: #0099e8;
+  font-weight: normal;
 }
 
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: right;
-
+.par-el {
+  padding-left: 30px;
+  position: relative;
 }
 
-p {
-  font-size: 14px;
-  color: #333333;
-  line-height: 21px;
+.par-el p {
+  font-family: 'Droid Sans', sans-serif;
+ /* 14px/10 */
+  font-size: 1.4em;
+  line-height: 1.8em;
+  color: #8e8d8d;
+  text-align: left;
 }
 
-a {
-  color: #1199C3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+.page {
+  padding-bottom: 80px;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #F3F3F3;
-  line-height: 28px;
+/* Body */
+
+body {
+  background: #b9babe url("../images/body-bg.png") repeat;
 }
 
-#skillsH3 {
-  color: #F5AE23;
-  display: none;
+.container {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  margin-bottom: 320px;
+  position: relative;
+  background: #fff url("../images/container-bg.png");
+  -webkit-box-shadow: 0px 0px 20px rgba(3, 3, 3, 0.3);
+  -moz-box-shadow: 0px 0px 20px rgba(3, 3, 3, 0.3);
+  box-shadow: 0px 0px 20px rgba(3, 3, 3, 0.3);
 }
 
-#skills {
-  display: none;
+/* Header */
+
+.site-header {
+  padding-top: 30px;
+  padding-bottom: 33px;
+  position: relative;
+  text-align: center;
 }
 
-.orange {
-  background-color: #F5AE23;
-}
-
-.orange-text {
-  color: #F5AE23;
-}
-
-.white-text {
+.site-header h1 {
+  font: 6em 'Arvo', serif;
+  line-height: 0.66666666em;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #464646;
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  z-index: 2;
 }
 
-.gray {
-  background-color: #F3F3F3;
-  padding-bottom: 10px;
-  clear:both;
+#logoline {
+  text-align: center;
 }
 
-.dark-gray {
-  background-color: #4A4A4A;
+.site-header h1:before,
+.site-header h1:after {
+  border-top: 1px solid #d4d4d4;
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 24%;
+  position: absolute;
+  left: 0;
+  top: 1.2em;
+  z-index: 1;
 }
 
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
+.site-header h1:after {
+  right: 0;
+  left: auto;
 }
 
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+.site-header h2 {
+  font: 2.1em 'Arvo', serif;
+  font-weight: normal;
+  color: #616161;
+  margin: -4px 0 25px 0;
 }
 
-.center-content {
-  padding: 5%;
+.site-header h3 {
+  font: 2.5em 'Droid Sans', sans-serif;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: #a4a5a6;
+  margin-right: 8%;
+  margin-left: 8%;
 }
 
-ul {
-  list-style-type: none;
+/* About me */
+
+#about-me {
+  margin-top: 50px;
 }
 
+#about-me article p:last-child {
+  margin-bottom: -3px;
+}
 
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
-  display: none;
+  width: 100px;
 }
 
-img {
-  padding: 10px;
+.cont-info {
+  padding-left: 5px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-
-/* Bar chart stuff */
-.chart div {
-  font: 10px sans-serif;
-  background-color: #4A4A4A;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  height: 12px;
-  color: white;
+#social li {
   display: inline-block;
+  width: 18%;
+  margin: 0 2% 2% 0;
+  float: left;
 }
 
-span {
-  padding: 5px;
+#social img {
+  max-width: 100%;
 }
 
-#letsConnect {
+#contacts {
+  margin-top: 50px;
+}
+
+#contacts li {
+  padding-bottom: 20px;
+}
+
+#contacts li a, 
+#contacts li a:hover {
+  font-size: 1.4em;
+  color: #959595;
+  text-decoration: none;
+  line-height: 0em;
+  padding-left: 30px;
+}
+
+/* Skills */
+
+#skills {
+  margin-top: 60px;
+}
+
+#skills-list {
+  padding-left: 30px;
+}
+
+.skill-level {
+  margin-top: 10px;
+  padding: 0 12px 0 7px;
+}
+
+.skill-level h4 {
+  font: 1.4em 'Droid Sans', sans-serif;
+  line-height: 1.071428em;
+  color: #464646;
   text-align: center;
+  font-weight: bold;
+  margin-top: -10px;
 }
 
-@media only screen and (max-width: 1024px) {
-  #letsConnect {
-    margin-top: 5%;
-  }
+/* Experience */
+
+#experience {
+  margin-top: 60px;
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+#experience p {
+  color: #c0c0c0;
 }
 
-@media only screen and (max-width: 750px) {
-  #letsConnect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
+.period {
+  top: 0;
+  padding-left: 5px;
+  font: 1.6em 'Droid Sans', sans-serif;
+  color: white;
+  font-weight: 400;
+  background-color: #0099e8;
+}
+
+.par-el header h2 {
+  font-family: 'Arvo', serif;
+  font-size: 2.3em;
+  font-weight: normal;
+  line-height: 1em;
+  color: #464646;
+  margin-top: 10px;
+}
+
+.par-el header h3 {
+  font: 1.8em 'Droid Sans', sans-serif;
+  line-height: 0.535714em;
+  color: #8e8e8e;
+  padding-bottom: 5px;
+}
+
+.in-spacing {
+  position: relative;
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+/* Education */
+
+#education {
+  margin-top: 60px;
+}
+
+#education p {
+  color: #c0c0c0;
+}
+
+/* Online courses */
+
+#online-courses {
+  margin-top: 60px;
+}
+
+.period {
+  top: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  font: 1.6em 'Droid Sans', sans-serif;
+  color: white;
+  font-weight: 400;
+  background-color: #0099e8;
+}
+
+.par-el header h2 {
+  font-family: 'Arvo', serif;
+  font-size: 2.3em;
+  font-weight: normal;
+  line-height: 1em;
+  color: #464646;
+  margin-top: 10px;
+}
+
+.par-el header h3 {
+  font: 1.8em 'Droid Sans', sans-serif;
+  line-height: 0.535714em;
+  color: #8e8e8e;
+  padding-bottom: 5px;
+}
+
+.in-spacing {
+  position: relative;
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+/* Projects */
+
+#projects {
+  margin-top: 60px;
+}
+
+#projects-details {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -10px;
+}
+
+.project-image {
+  width: 200px;
+  float: left;
+}
+
+/* Map */
+
+#map-section {
+  margin-top: 60px;
 }
 
 #map {
@@ -210,10 +338,91 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skillsH3,
-  #skills,
-  .biopic {
-    display: block;
-  }
+/* Progress Bar */
+
+.progressbar {
+  width: 100%;
+  height: 13px;
+  margin: 0 auto 20px auto;
+  padding: 0px;
+  background: #cfcfcf;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa #bbb #fff #bbb;
+  box-shadow: inset 0px 2px 3px #bbb;
+}
+
+.progressbar, .progressbar-inner {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.progressbar-inner {
+  width: 77%;
+  height: 100%;
+  background: #999;
+  background-size: 18px 18px;
+  background-color: #ac0;
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                        transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                        transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                        transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                        transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                        transparent 75%, transparent);
+  box-shadow: inset 0px 2px 8px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .2);
+}
+
+.progressbar-inner {
+  background-color: #f2c345;
+}
+
+.percent-10 .progressbar-inner {
+  width: 10%;
+}
+
+.percent-20 .progressbar-inner {
+  width: 20%;
+}
+
+.percent-30 .progressbar-inner {
+  width: 30%;
+}
+
+.percent-40 .progressbar-inner {
+  width: 40%;
+}
+
+.percent-50 .progressbar-inner {
+  width: 50%;
+}
+
+.percent-60 .progressbar-inner {
+  width: 60%;
+}
+
+.percent-70 .progressbar-inner {
+  width: 70%;
+}
+
+.percent-80 .progressbar-inner {
+  width: 80%;
+}
+
+.percent-90 .progressbar-inner {
+  width: 90%;
+}
+
+.percent-100 .progressbar-inner {
+  width: 100%;
 }
