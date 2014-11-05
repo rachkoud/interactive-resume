@@ -1,5 +1,5 @@
 function replaceDataInLine(line, value) {
-  return line.replace(/%data%/g, value); //line.replace("%data%", value) 
+  return line.replace(/%data%/g, value);
 }
 
 // Data sources
@@ -272,6 +272,10 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
   //private functions 
 
   bio.build = function() {
+    $("#about-me").html(HTMLaboutMeInitialize);
+    $("#skills").html(HTMLskillsInitialize);
+    $("#site-header").html(HTMLsiteHeaderInitialize);
+
     $("#logoline").prepend(replaceDataInLine(HTMLheaderName, bio.name));
     
     $("#site-header").append(replaceDataInLine(HTMLheaderRole, bio.role));
@@ -306,6 +310,8 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
   }
 
   work.build = function() {
+    $("#experience").html(HTMLexperienceInitialize);
+
     for (job in work.jobs) {
       $("#experience-details").append(HTMLworkStart);  
 
@@ -327,6 +333,8 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
   }
 
   projects.build = function() {
+    $("#projects").html(HTMLprojectsInitialize);
+
     for (project in projects.projects) {
       $("#projects-details").append(HTMLprojectStart);  
 
@@ -347,6 +355,9 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
   }
 
   education.build = function() {
+    $("#education").html(HTMLeducationInitialize);
+    $("#online-courses").html(HTMLonlineCoursesInitialize);
+
     for (school in education.schools) {
       $("#education-details").append(HTMLschoolStart);  
 
@@ -378,21 +389,48 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     }
   }
 
+  var map = {
+    build : function() {
+      $("#map-section").html(HTMLmapInitialize);
+      
+      $("#mapDiv").append(googleMap);
+      initializeMap();
+    }
+  };
+
   var build = function() {
     bio.build();
     work.build();
     projects.build();
     education.build();
-  }
+
+    $('#main').append(internationalizeButton);
+  };
 
   return { 
     //public members 
-    build : build
+    build : build,
+    bio: bio,
+    work: work,
+    projects: projects,
+    education: education,
+    map: map
   }; 
 }(bio, work, projects, education); // () self calling the function, so don’t have to use the new keyword to instantiate it
 
-resumeBuilder.build();
+// We could build the full resume : 
+// resumeBuilder.build();
 
-$('#main').append(internationalizeButton);
+// Or in any order : 
+$( document ).ready(function() {
+  resumeBuilder.bio.build();
+  resumeBuilder.bio.build();
+  resumeBuilder.map.build();
+  resumeBuilder.work.build();
+  resumeBuilder.projects.build();
+  resumeBuilder.education.build();
+  resumeBuilder.map.build();
+  resumeBuilder.work.build();
+  resumeBuilder.projects.build();
+});
 
-$("#mapDiv").append(googleMap);

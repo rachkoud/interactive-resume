@@ -12,6 +12,15 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
+var HTMLaboutMeInitialize = "<aside class='col-md-3 aside-el'><h2>About me</h2><h5>professional profile<br /> and contact info</h5></aside><article id='about-me-text' class='col-md-6 border-left par-el'></article><div class='col-md-3 cont-info'><ul id='social'></ul><ul id='contacts'></ul></div>";
+var HTMLskillsInitialize = "<aside class='col-md-3 aside-el'><h2>My Skills</h2><h5>skills that I’m<br /> proud of</h5></aside>";
+var HTMLexperienceInitialize = "<aside class='col-md-3 aside-el'><h2>Experience</h2><h5>where I worked</h5></aside><div id='experience-details' class='col-md-9'></div>";
+var HTMLeducationInitialize = "<aside class='col-md-3 aside-el'><h2>Education</h2><h5>Where I studied</h5></aside><div id='education-details' class='col-md-9'></div>";
+var HTMLonlineCoursesInitialize = "<aside id='online-courses-header' class='col-md-3 aside-el'></aside><div id='online-courses-details' class='col-md-9'></div>";
+var HTMLprojectsInitialize = "<aside class='col-md-3 aside-el'><h2>Projects</h2><h5>some of my<br /> best work</h5></aside><div class='col-md-9 border-left'><div id='projects-details'></div>";
+var HTMLsiteHeaderInitialize = "<div id='logoline'></div>";
+var HTMLmapInitialize = "<aside class='col-md-3 aside-el'><h2>Where I've Lived and Worked</h2></aside><div class='col-md-9 border-left'><div id='mapDiv'></div></div>";
+
 var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<h2>%data%</h2>";
 
