@@ -72,8 +72,7 @@ var projects = {
         "images/ProjectNanodegree2.jpg",
         "images/ProjectNanodegree3.jpg",
         "images/ProjectNanodegree4.jpg",
-        "images/ProjectNanodegree5.jpg",
-      
+        "images/ProjectNanodegree5.jpg"
       ]
     },
     {
@@ -267,9 +266,9 @@ var education = {
 // Resume builder can create build resume from JSON
 // In this example, JSON is in memory
 
-var resumeBuilder = function(bio, work, projects, education) { // name lower case, don’t have to use the new keyword on it 
-  //private variables 
-  //private functions 
+var resumeBuilder = function(bio, work, projects, education) { // name lower case, don’t have to use the new keyword on it
+  //private variables
+  //private functions
 
   bio.build = function() {
     $("#about-me").html(HTMLaboutMeInitialize);
@@ -277,7 +276,7 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     $("#site-header").html(HTMLsiteHeaderInitialize);
 
     $("#logoline").prepend(replaceDataInLine(HTMLheaderName, bio.name));
-    
+
     $("#site-header").append(replaceDataInLine(HTMLheaderRole, bio.role));
 
     $("#site-header").append(replaceDataInLine(HTMLWelcomeMsg, bio.welcomeMessage));
@@ -313,7 +312,7 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     $("#experience").html(HTMLexperienceInitialize);
 
     for (job in work.jobs) {
-      $("#experience-details").append(HTMLworkStart);  
+      $("#experience-details").append(HTMLworkStart);
 
       var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
       $(".work-entry:last").append(formattedDates);
@@ -336,7 +335,7 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     $("#projects").html(HTMLprojectsInitialize);
 
     for (project in projects.projects) {
-      $("#projects-details").append(HTMLprojectStart);  
+      $("#projects-details").append(HTMLprojectStart);
 
       $(".project-entry:last").prepend(replaceDataInLine(HTMLprojectTitle, projects.projects[project].title));
 
@@ -359,13 +358,13 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     $("#online-courses").html(HTMLonlineCoursesInitialize);
 
     for (school in education.schools) {
-      $("#education-details").append(HTMLschoolStart);  
+      $("#education-details").append(HTMLschoolStart);
 
       $(".education-entry:last").append(replaceDataInLine(HTMLschoolDates, education.schools[school].dates));
 
       $(".education-entry:last").append(replaceDataInLine(HTMLschoolName, education.schools[school].name));
 
-      $(".education-entry:last header").append(replaceDataInLine(HTMLschoolDegree, education.schools[school].degree));        
+      $(".education-entry:last header").append(replaceDataInLine(HTMLschoolDegree, education.schools[school].degree));
 
       if (education.schools[school].majors.length > 0)
       {
@@ -392,7 +391,7 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
   var map = {
     build : function() {
       $("#map-section").html(HTMLmapInitialize);
-      
+
       $("#mapDiv").append(googleMap);
       initializeMap();
     }
@@ -407,22 +406,22 @@ var resumeBuilder = function(bio, work, projects, education) { // name lower cas
     $('#main').append(internationalizeButton);
   };
 
-  return { 
-    //public members 
+  return {
+    //public members
     build : build,
     bio: bio,
     work: work,
     projects: projects,
     education: education,
     map: map
-  }; 
+  };
 }(bio, work, projects, education); // () self calling the function, so don’t have to use the new keyword to instantiate it
 
-// We could build the full resume : 
+// We could build the full resume :
 // resumeBuilder.build();
 
-// Or in any order : 
-$( document ).ready(function() {
+// Or in any order :
+$(document).ready(function() {
   resumeBuilder.bio.build();
   resumeBuilder.bio.build();
   resumeBuilder.map.build();
